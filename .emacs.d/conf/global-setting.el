@@ -31,6 +31,7 @@
 ;; (add-to-list 'company-backends 'geiser-company-backend)
 (add-to-list 'company-backends 'company-shell)
 ;; (add-to-list 'company-backends 'es-company-backend)
+(add-to-list 'company-backends 'company-tide)
 
 (provide 'global-setting)
 ;;; global-setting.el ends here

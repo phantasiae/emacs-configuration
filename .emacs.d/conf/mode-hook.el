@@ -8,6 +8,8 @@
 
 ;;; Code:
 
+(defvar flycheck-check-syntax-automatically)
+
 ;; js2
 (add-hook 'js2-mode-hook
 	  (lambda ()
@@ -19,7 +21,11 @@
 	  (lambda ()
 	    (company-mode)
 	    (flycheck-mode)
-	    (tern-mode)))
+	    (eldoc-mode t)
+	    (when (string-equal "tsx" (file-name-extension buffer-file-name))
+	      (tide-setup)
+	      (setq flycheck-check-syntax-automatically '(save mode-enabled))
+	      (tide-hl-identifier-mode t))))
 
 ;; jsonmode
 (add-hook 'json-mode-hook
@@ -82,6 +88,11 @@
 (add-hook 'shell-script-mode
 	  (lambda ()
 	    (company-mode t)))
+
+;; before save
+(add-hook 'before-save-hook
+	  (lambda ()
+	    (tide-format-before-save)))
 
 (provide 'mode-hook)
 ;;; mode-hook ends here

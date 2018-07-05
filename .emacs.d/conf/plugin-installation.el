@@ -3,7 +3,7 @@
 
 ;;; Code:
 (defvar must-be-installed-plugins
-   '(anaconda-mode
+  '(anaconda-mode
     company
     company-anaconda
     company-c-headers
