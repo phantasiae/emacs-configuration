@@ -15,7 +15,6 @@
 (add-to-list 'load-path "~/.emacs.d/conf/")
 (setq-default flycheck-emacs-lisp-load-path load-path)
 
-(require 'plugin-installation)
 (require 'ui-conf)
 (require 'key-binding)
 (require 'mode-hook)
@@ -25,3 +24,4 @@
 
 ;;; .emacs ends here
 
+;;; 12

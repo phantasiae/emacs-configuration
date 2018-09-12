@@ -1,4 +1,4 @@
-;;; plugin-installation --- install plugin when initiliaization
+;;; plugin-installation --- install plugin when initiliaization   -*- lexical-binding:t -*-
 ;;; Commentary:
 
 ;;; Code:
@@ -18,7 +18,6 @@
     helm
     helm-company
     ivy
-    js2-mode
     magit
     multi-term
     nodejs-repl
@@ -28,21 +27,10 @@
     tern
     web-mode))
 
-(defun install-one-plugin (plugin)
-"Install a plugin name is PLUGIN."
-  (if (package-installed-p plugin)
-      nil
-    (package-install plugin)))
 
-(defun install-plugin-when-uninstalled (plugin-list)
-"Install a list of plugin with PLUGIN-LIST."
-  (if (null plugin-list)
-      nil
-    (progn
-      (install-one-plugin (car plugin-list))
-      (install-plugin-when-uninstalled (cdr plugin-list)))))
-
-(install-plugin-when-uninstalled must-be-installed-plugins)
+(defun install-custom-package-p ()
+  "Install all defined package."
+  (mapc 'package-install must-be-installed-plugins))
 
 (provide 'plugin-installation)
 ;;; plugin-installation ends here
