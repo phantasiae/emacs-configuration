@@ -5,15 +5,8 @@
 ;;; - rainbow-delimiters
 ;;; - flycheck
 
-(require 'ivy)
-(require 'counsel)
-(require 'company)
-(require 'rainbow-delimiters)
-(require 'flycheck)
-(require 'ibuffer)
 
 ;;; Code:
-
 (use-package ivy
   :ensure t)
 
@@ -70,6 +63,16 @@
 
 (use-package yaml-mode
   :ensure t)
+
+(use-package magit
+  :ensure t)
+
+(require 'ivy)
+(require 'counsel)
+(require 'company)
+(require 'rainbow-delimiters)
+(require 'flycheck)
+(require 'ibuffer)
 
 (provide 'support)
 ;;; support.el ends here
