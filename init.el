@@ -20,7 +20,7 @@
 (require 'support)
 (require 'web)
 (require 'android)
-
+(require 'rust)
 
 
 ;;; init.el ends here
