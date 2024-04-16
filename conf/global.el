@@ -25,6 +25,8 @@
 ;; (global-set-key (kbd "C-S-o") 'counsel-rhythmbox)
 ;; (global-set-key (kbd "C-c w") 'counsel-wmctrl)
 
+(when (eq system-type 'darwin)
+  (global-set-key (kbd "C-/") 'undo))
 
 (provide 'global)
 ;;; global.el ends here

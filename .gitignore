@@ -3,6 +3,7 @@
 
 # Packaging
 .cask
+elpa/
 
 # Backup files
 *~
@@ -10,4 +11,10 @@
 # Undo-tree save-files
 *.~undo-tree
 
-elpa/
+
+.cache/
+.lsp-session-v1
+conf/plantuml.jar
+rust-playground/
+transient/
+url/

@@ -19,7 +19,8 @@
   (require 'support)
   (require 'web)
   (require 'android)
-  (require 'rust))
+  (require 'rust)
+  (require 'golang))
 
 ;;; init.el ends here
 
@@ -39,9 +40,10 @@
  '(global-auto-revert-mode t)
  '(global-font-lock-mode t)
  '(inhibit-startup-screen t)
+ '(package-selected-packages
+   '(swiper all-the-icons-ivy cmake-mode go-eldoc company-go go-impl go-mode flycheck-plantuml plantuml-mode systemd rust-playground lsp-ui rust-mode cargo lsp-ivy lsp-mode groovy-mode android-mode gradle-mode kotlin-mode web-mode tide yaml-mode indium tao-theme flycheck rainbow-delimiters company counsel ivy use-package))
  '(scroll-bar-mode nil)
  '(show-paren-delay 0)
- '(show-paren-mode t)
  '(show-paren-style 'parenthesis)
  '(tool-bar-mode nil)
  '(url-automatic-caching t))

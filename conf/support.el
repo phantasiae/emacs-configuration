@@ -31,6 +31,8 @@
   emacs-lisp-mode
   typescript-mode
   web-mode
+  :custom
+  (push 'company-lsp company-backends)
   :bind
   (("C-\\" . company-complete))
   :ensure company)
@@ -67,8 +69,30 @@
 (use-package magit
   :ensure t)
 
+(use-package gitlab-ci-mode
+  :ensure t)
+
+(use-package gitlab-ci-mode-flycheck
+  :ensure t)
+
+(use-package dockerfile-mode
+  :ensure t)
+
+(use-package lsp-mode
+  :hook ((rust-mode . lsp)
+	 (go-mode . lsp))
+  :commands lsp
+  :ensure t)
+
+(use-package yasnippet
+  :ensure
+  :config
+  (yas-reload-all)
+  (add-hook 'rust-mode-hook 'yas-minor-mode)
+  (add-hook 'text-mode-hook 'yas-minor-mode))
+
 (require 'ivy)
-(require 'counsel)
+;; (require 'counsel)
 (require 'company)
 (require 'rainbow-delimiters)
 (require 'flycheck)
